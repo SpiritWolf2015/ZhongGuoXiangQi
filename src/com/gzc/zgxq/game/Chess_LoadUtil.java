@@ -89,18 +89,18 @@ public class Chess_LoadUtil {
 		public static boolean ADVISOR_SPAN(int sqSrc, int sqDst) {
 		  return ccLegalSpan[sqDst - sqSrc + 256] == 2;
 		}
-
-		// 走法是否符合相(象)的步长
+		
+		/** 走法是否符合相(象)的步长 */ 
 		public static boolean BISHOP_SPAN(int sqSrc, int sqDst) {
 		  return ccLegalSpan[sqDst - sqSrc + 256] == 3;
 		}
-
-		// 相(象)眼的位置
+		
+		/** 相(象)眼的位置 */ 
 		public static int BISHOP_PIN(int sqSrc, int sqDst) {
 		  return (sqSrc + sqDst) >> 1;
 		}
-
-		// 马腿的位置
+		
+		/** 马腿的位置 */ 
 		public static int KNIGHT_PIN(int sqSrc, int sqDst) {
 		  return sqSrc + ccKnightPin[sqDst - sqSrc + 256];
 		}
@@ -115,17 +115,17 @@ public class Chess_LoadUtil {
 		  return (sq & 0x80) == (sd << 7);
 		}
 
-		// 是否在河的同一边
+		/**  是否在河的同一边 */
 		public static boolean SAME_HALF(int sqSrc, int sqDst) {
 		  return ((sqSrc ^ sqDst) & 0x80) == 0;
 		}
-
-		// 是否在同一行
+		
+		/**  是否在同一行 */
 		public static boolean SAME_RANK(int sqSrc, int sqDst) {
 		  return ((sqSrc ^ sqDst) & 0xf0) == 0;
 		}
-
-		// 是否在同一列
+		
+		/**  是否在同一列 */
 		public static boolean SAME_FILE(int sqSrc, int sqDst) {
 		  return ((sqSrc ^ sqDst) & 0x0f) == 0;
 		}

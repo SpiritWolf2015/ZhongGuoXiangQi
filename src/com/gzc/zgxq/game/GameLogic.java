@@ -155,7 +155,7 @@ public class GameLogic {
 		}
 
 		// 2. 判断目标格是否有自己的棋子
-		sqDst = DST(mv);
+		sqDst = Chess_LoadUtil.DST(mv);
 		pcDst = ucpcSquares[sqDst];
 		if ((pcDst & pcSelfSide) != 0) {
 			return false;
@@ -198,11 +198,11 @@ public class GameLogic {
 				return false;
 			}
 		case PIECE_PAWN:
-			if (AWAY_HALF(sqDst, sdPlayer)
+			if (Chess_LoadUtil.AWAY_HALF(sqDst, sdPlayer)
 					&& (sqDst == sqSrc - 1 || sqDst == sqSrc + 1)) {
 				return true;
 			}
-			return sqDst == SQUARE_FORWARD(sqSrc, sdPlayer);
+			return sqDst == Chess_LoadUtil.SQUARE_FORWARD(sqSrc, sdPlayer);
 		default:
 			return false;
 		}

@@ -308,9 +308,7 @@ public class Constant {
 	
 		/** 最大的生成走法数 */
 		public final static int MAX_GEN_MOVES = 128;
-		/**
-		 * 最大的搜索深度
-		 */
+		/** 最大的搜索深度 */
 		public static int LIMIT_DEPTH =30;    
 		/** 最高分值，即将死的分值 */
 		public final static int MATE_VALUE = 10000; 

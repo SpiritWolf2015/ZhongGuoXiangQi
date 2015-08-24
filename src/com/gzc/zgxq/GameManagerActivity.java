@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -65,7 +66,7 @@ public class GameManagerActivity extends Activity {
 		@Override public void handleMessage(Message message){
 			switch(message.what){			
 				case 0:
-					System.out.println("GZC->handleMessage线程id："+Thread.currentThread().getId());
+					Log.i("handleMessage","GZC->handleMessage线程id："+Thread.currentThread().getId());
 					// 进入游戏View
 					goToGameView();
 				break;

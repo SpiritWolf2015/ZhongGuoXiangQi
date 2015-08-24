@@ -123,7 +123,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 	/**
 	 * 下棋方标志位，false为黑方下棋
 	 */
-	boolean isRedPlayChess;
+	private	boolean isRedPlayChess;
 
 	boolean nanduBXZ;
 	int bzcol;
@@ -690,7 +690,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 				if (GameLogic.LegalMove(mv)) {// 如果下棋符合规则
 					if (GameLogic.MakeMove(mv, 0)) {// 如果没有被将军
 						initArrays();// 初始化数组
-						father.playSound(2, 1);// b播放声音玩家走棋
+						father.playSound(2, 1);// 播放声音玩家走棋
 						huiqibushu = 0;// 悔棋标志置零
 						onDrawcanvas();// 重绘方法
 						stack.push(new StackPlayChess(xzgz
